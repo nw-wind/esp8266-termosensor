@@ -4,15 +4,13 @@ local tPin = 3
 local iD = "TEST"
 local interval = 600000
 
-local gTemp=-99
-
 ds18b20.setup(tPin)
 gpio.mode(ledPin, gpio.OUTPUT)
 local mytimer = tmr.create()
 mytimer:register(interval, tmr.ALARM_AUTO, function() 
   gpio.write(ledPin, gpio.HIGH)
   -- DS18B20
-  gTemp=-99
+  local gTemp=-99
   ds18b20.read(function(ind,rom,res,temp,tdec,par)
     --print(ind,string.format("%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X",
     --  string.match(rom,"(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+):(%d+)")),res,temp,tdec,par)
