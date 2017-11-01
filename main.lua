@@ -2,7 +2,7 @@ local ledPin = 2 -- 4 default
 local dhtPin = 1
 local tPin = 3
 local iD = "TEST"
-local interval = 10000
+local interval = 600000
 
 local gTemp=-99
 
